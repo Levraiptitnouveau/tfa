@@ -1,0 +1,336 @@
+@charset "UTF-8";
+body {
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #444;
+}
+
+.title {
+  color: #e41612;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes floatreverse {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+body {
+  background-color: #E5DABC;
+  margin: 0;
+}
+
+.burgermenu_button {
+  position: fixed;
+  top: 0;
+  left: 85%;
+  z-index: 1;
+  border: none;
+  background-color: unset;
+  background-image: url("../assets/images/bookmark.svg"); /* à corriger */
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 112px;
+  width: 50px;
+  padding-right: 12px;
+  padding-left: 12px;
+  font-size: 16px;
+  color: white;
+  font-family: "Poltawski Nowy", serif;
+  font-weight: normal;
+  white-space: normal;
+}
+
+img { /* à retirer */
+  display: none;
+}
+
+header {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* à changer */
+  height: 70vh;
+}
+header .nav {
+  display: none;
+}
+
+h1 {
+  font-family: "Poltawski Nowy", serif;
+  /* à changer */
+  font-size: 47px;
+  color: black;
+  margin: 0px;
+}
+
+h2 {
+  font-family: "Crimson Text", serif;
+  font-size: 29px; /* à changer */
+  font-weight: normal;
+  color: black;
+  margin: 0px;
+}
+
+h3, p {
+  color: black;
+}
+
+main {
+  background-image: url("../assets/images/background_texture.png"); /* à corriger */
+  padding-top: 6px;
+  padding-bottom: 50px;
+}
+
+.conteneur_sections {
+  background-color: #F4F4F4;
+  /* à changer */
+  margin: 0 6px 25px 6px;
+  padding-bottom: 200px;
+}
+
+.couverture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 19px;
+  padding-right: 19px;
+  padding-top: 19px;
+}
+.couverture h2 {
+  font-size: 37px;
+  font-family: "Poltawski Nowy", serif;
+  margin: 0px;
+}
+.couverture h3 {
+  font-size: 18px;
+  font-family: "Poltawski Nowy", serif;
+  margin: 0px;
+  font-weight: normal;
+}
+.couverture p {
+  font-size: 18px;
+  font-family: "Crimson Text", serif;
+  font-weight: normal;
+  align-self: flex-end;
+}
+.couverture img {
+  display: unset;
+  width: 100%;
+}
+.couverture .couverture__image {
+  position: relative;
+  height: 372px;
+  display: flex;
+  align-items: center;
+}
+.couverture .couverture__image__fond {
+  animation: floatreverse 4s infinite cubic-bezier(0.34, 0.54, 0.43, 0.65);
+}
+.couverture .couverture__image__avant {
+  width: 60%;
+  position: absolute;
+  left: 0%;
+  bottom: 5%;
+  animation: float 4s infinite cubic-bezier(0.34, 0.54, 0.43, 0.65);
+}
+
+.pages {
+  margin-top: 50px; /* à retirer */
+}
+
+section {
+  padding-left: 19px;
+  padding-right: 19px;
+  margin-top: 100px;
+  background-image: url(../assets/images/separateur.svg); /* à corriger */
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 80%;
+  overflow-x: hidden; /* à retirer */
+}
+section h2 {
+  text-align: center;
+  font-size: 37px;
+  font-family: "Poltawski Nowy", serif;
+  margin-bottom: 25px;
+}
+section h3 {
+  font-size: 29px;
+  font-family: "Crimson Text", serif;
+  font-weight: normal;
+  margin-bottom: 25px;
+  margin-top: 0px;
+}
+section p {
+  font-family: "Crimson Text", serif;
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 25px;
+  margin-top: 0px;
+}
+section img {
+  display: unset;
+  width: 100%;
+  border: solid black 1px;
+  margin-bottom: 100px;
+}
+section .tape {
+  border: none;
+  margin-bottom: 25px;
+}
+section .rotate {
+  transform: rotate(20deg);
+}
+
+.chapitre_5 {
+  background-image: none;
+}
+
+.dorinne {
+  font-size: 29px;
+}
+
+.asterix {
+  font-size: 24px;
+  color: #C31A2F;
+}
+
+a {
+  color: #C31A2F;
+  font-weight: bold;
+}
+
+.handwritten {
+  font-family: "Caveat", cursive;
+  font-size: 29px;
+  line-height: 31px;
+}
+
+.red {
+  color: #C31A2F;
+}
+
+.fin {
+  text-align: center;
+}
+
+.question1 {
+  transform: rotate(-6deg);
+  margin-top: 100px;
+}
+
+.question2 {
+  transform: rotate(2deg);
+  margin-top: 100px;
+  text-align: end;
+}
+
+.question3 {
+  transform: rotate(-2deg);
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+li .question {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Crimson Text", serif;
+  font-style: italic;
+}
+li p {
+  margin-top: 25px;
+}
+
+.chapitre_4__contenu__partie_2 ul, .chapitre_4__contenu__partie_3 ul {
+  padding-left: 19px;
+  margin-top: 0px;
+}
+
+.important {
+  color: #680000;
+  font-size: 29px;
+  font-weight: bold;
+}
+
+.demo_button {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+.demo_button button {
+  background-color: #726055;
+  color: white;
+  text-decoration: underline;
+  font-family: "Crimson Text", serif;
+  font-weight: normal;
+  padding: 10px 13px;
+  border: none;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+.demo_button .random_book {
+  height: 480px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.demo_button .random_book__cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  width: 70%;
+  height: 80%;
+  color: white;
+  font-family: "Crimson Text", serif;
+  font-size: 29px;
+}
+.demo_button .random_book p {
+  font-size: 37px;
+  font-family: "Poltawski Nowy", serif;
+  margin-top: 25px;
+  line-height: 40px;
+}
+
+.conteneur_video h2 {
+  padding-left: 25px;
+  padding-right: 25px;
+  color: white;
+}
+.conteneur_video .video {
+  margin-top: 25px;
+  width: 100%;
+  height: 300px;
+  background-color: black;
+}
+
+/*
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+} *//*# sourceMappingURL=app.css.map */
