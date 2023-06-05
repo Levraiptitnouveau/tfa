@@ -37,11 +37,15 @@ body {
   margin: 0;
 }
 
+body.actif {
+  overflow: hidden;
+}
+
 .burgermenu_button {
   position: fixed;
   top: 0;
   left: 85%;
-  z-index: 1;
+  z-index: 3;
   border: none;
   background-color: unset;
   background-image: url("../assets/images/bookmark.svg"); /* à corriger */
@@ -325,6 +329,35 @@ li p {
   width: 100%;
   height: 300px;
   background-color: black;
+}
+
+.dwt__mail {
+  fill: #C31A2F;
+}
+
+.nav_burger {
+  position: absolute;
+  background-color: #F4F4F4;
+  width: 100vw;
+  height: 100vh;
+  top: -100%;
+  z-index: 2;
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.nav_burger h2 {
+  font-family: "Poltawski Nowy", serif;
+  font-size: 37px;
+}
+.nav_burger ul li {
+  font-size: 29px;
+}
+
+.nav_burger.actif {
+  top: 0;
+  position: fixed;
 }
 
 /*
