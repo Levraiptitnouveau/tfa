@@ -36,6 +36,7 @@ let DivImageContainer6 = document.createElement('div');
 DivImageContainer6.classList.add('image_8');
 let DivImageContainer7 = document.createElement('div');
 DivImageContainer7.classList.add('image_9');
+let main = document.querySelector("header");
 /* Borgir menu */
 
 BurgerMenuButton.addEventListener("click", () => {
@@ -43,11 +44,13 @@ BurgerMenuButton.addEventListener("click", () => {
     if (BurgerMenuButton.innerHTML == "X") {
         BurgerMenu.classList.remove("actif");
         Body.classList.remove("actif");
+        BurgerMenuButton.classList.remove("clicked")
         BurgerMenuButton.innerHTML = "ME</br>NU";
     } else {
         BurgerMenu.classList.add("actif");
         Body.classList.add("actif");
     BurgerMenuButton.innerHTML = "X";
+    BurgerMenuButton.classList.add("clicked")
     }
     
 })
@@ -56,6 +59,46 @@ let Prologue = document.querySelector("#burgerlink");
 Prologue.addEventListener("click", () => {
         BurgerMenu.classList.remove("actif");
         Body.classList.remove("actif");
+        BurgerMenuButton.innerHTML = "ME</br>NU";
+});
+
+let Chapitre1Lien = document.querySelector("#burgerchapter1");
+Chapitre1Lien.addEventListener("click", () => {
+        BurgerMenu.classList.remove("actif");
+        Body.classList.remove("actif");
+        BurgerMenuButton.classList.remove("clicked")
+        BurgerMenuButton.innerHTML = "ME</br>NU";
+});
+
+let Chapitre2Lien = document.querySelector("#burgerchapter2");
+Chapitre2Lien.addEventListener("click", () => {
+        BurgerMenu.classList.remove("actif");
+        Body.classList.remove("actif");
+        BurgerMenuButton.classList.remove("clicked")
+        BurgerMenuButton.innerHTML = "ME</br>NU";
+});
+
+let Chapitre3Lien = document.querySelector("#burgerchapter3");
+Chapitre3Lien.addEventListener("click", () => {
+        BurgerMenu.classList.remove("actif");
+        Body.classList.remove("actif");
+        BurgerMenuButton.classList.remove("clicked")
+        BurgerMenuButton.innerHTML = "ME</br>NU";
+});
+
+let Chapitre4Lien = document.querySelector("#burgerchapter4");
+Chapitre4Lien.addEventListener("click", () => {
+        BurgerMenu.classList.remove("actif");
+        Body.classList.remove("actif");
+        BurgerMenuButton.classList.remove("clicked")
+        BurgerMenuButton.innerHTML = "ME</br>NU";
+});
+
+let Chapitre5Lien = document.querySelector("#burgerchapter5");
+Chapitre5Lien.addEventListener("click", () => {
+        BurgerMenu.classList.remove("actif");
+        Body.classList.remove("actif");
+        BurgerMenuButton.classList.remove("clicked")
         BurgerMenuButton.innerHTML = "ME</br>NU";
 });
 
@@ -101,6 +144,7 @@ function cdiv(x) {              /* https://www.w3schools.com/howto/howto_js_medi
         DivImage.appendChild(DivImageContainer5);
         DivImage.appendChild(DivImageContainer6);
         DivImage.appendChild(DivImageContainer7);
+        
         
     } 
 }
@@ -353,11 +397,7 @@ chapter5.addEventListener("click", (e) => {
 window.addEventListener("scroll", pop);
 function pop() {
     if(Pages.contains(DivImage) == true) {
-        console.log("début = " + tl.scrollTrigger.start + ", fin = " + ( tl.scrollTrigger.start +
-            (tl.scrollTrigger.end - tl.scrollTrigger.start) * (tl.labels["fin rotation"] / tl.duration()) ) + ", milieu = " + (tl.scrollTrigger.start + ( tl.scrollTrigger.start +
-            (tl.scrollTrigger.end - tl.scrollTrigger.start) * (tl.labels["fin rotation"] / tl.duration()) ))/2 + ", hauteur du scroll = " + window.scrollY)
-          
-          console.log(Number(cover.style.transform.substring(10, 14)));
+
           if (Number(cover.style.transform.substring(10, 14)) < 20.6) {
             InsideCover.forEach((element) => element.classList.remove("hidden"));
           } else if (Number(cover.style.transform.substring(10, 14)) >= 20.6) {
@@ -371,6 +411,13 @@ function pop() {
             cover.classList.remove("hidden");
             pages.classList.add("hidden");
           }
+    }
+    console.log(window.scrollY + " = " + main.offsetTop)
+    if (window.scrollY < main.offsetTop) {
+      BurgerMenuButton.classList.add("unseen")
+
+    } else {
+      BurgerMenuButton.classList.remove("unseen");
     }
   
 }
