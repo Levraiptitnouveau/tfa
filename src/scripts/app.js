@@ -36,70 +36,78 @@ let DivImageContainer6 = document.createElement('div');
 DivImageContainer6.classList.add('image_8');
 let DivImageContainer7 = document.createElement('div');
 DivImageContainer7.classList.add('image_9');
-let main = document.querySelector("header");
+let main = document.querySelector("main");
+let cover = document.querySelector(".couverture");
+let pages = document.querySelector(".pages");
+let InsideCover = document.querySelectorAll(".couverture__contenu");
+let navBurger = document.querySelector(".nav_burger");
+let recuperateur = main.offsetTop;
+console.log(main.offsetTop)
+
 /* Borgir menu */
 
 BurgerMenuButton.addEventListener("click", () => {
 
-    if (BurgerMenuButton.innerHTML == "X") {
-        BurgerMenu.classList.remove("actif");
-        Body.classList.remove("actif");
-        BurgerMenuButton.classList.remove("clicked")
-        BurgerMenuButton.innerHTML = "ME</br>NU";
-    } else {
-        BurgerMenu.classList.add("actif");
-        Body.classList.add("actif");
-    BurgerMenuButton.innerHTML = "X";
-    BurgerMenuButton.classList.add("clicked")
-    }
-    
+  if (BurgerMenuButton.innerHTML == "X") {
+      BurgerMenu.classList.remove("actif");
+      Body.classList.remove("actif");
+      BurgerMenuButton.classList.remove("clicked")
+      BurgerMenuButton.innerHTML = "ME</br>NU";
+  } else {
+      BurgerMenu.classList.add("actif");
+      Body.classList.add("actif");
+  BurgerMenuButton.innerHTML = "X";
+  BurgerMenuButton.classList.add("clicked")
+  }
+  
 })
 
 let Prologue = document.querySelector("#burgerlink");
 Prologue.addEventListener("click", () => {
-        BurgerMenu.classList.remove("actif");
-        Body.classList.remove("actif");
-        BurgerMenuButton.innerHTML = "ME</br>NU";
+      BurgerMenu.classList.remove("actif");
+      Body.classList.remove("actif");
+      BurgerMenuButton.classList.remove("clicked");
+      BurgerMenuButton.innerHTML = "ME</br>NU";
 });
 
 let Chapitre1Lien = document.querySelector("#burgerchapter1");
 Chapitre1Lien.addEventListener("click", () => {
-        BurgerMenu.classList.remove("actif");
-        Body.classList.remove("actif");
-        BurgerMenuButton.classList.remove("clicked")
-        BurgerMenuButton.innerHTML = "ME</br>NU";
+      BurgerMenu.classList.remove("actif");
+      Body.classList.remove("actif");
+      BurgerMenuButton.classList.remove("clicked");
+      BurgerMenuButton.innerHTML = "ME</br>NU";
 });
 
 let Chapitre2Lien = document.querySelector("#burgerchapter2");
 Chapitre2Lien.addEventListener("click", () => {
-        BurgerMenu.classList.remove("actif");
-        Body.classList.remove("actif");
-        BurgerMenuButton.classList.remove("clicked")
-        BurgerMenuButton.innerHTML = "ME</br>NU";
+      BurgerMenu.classList.remove("actif");
+      Body.classList.remove("actif");
+      BurgerMenuButton.classList.remove("clicked");
+      BurgerMenuButton.innerHTML = "ME</br>NU";
 });
 
 let Chapitre3Lien = document.querySelector("#burgerchapter3");
 Chapitre3Lien.addEventListener("click", () => {
-        BurgerMenu.classList.remove("actif");
-        Body.classList.remove("actif");
-        BurgerMenuButton.classList.remove("clicked")
-        BurgerMenuButton.innerHTML = "ME</br>NU";
+      BurgerMenu.classList.remove("actif");
+      Body.classList.remove("actif");
+      BurgerMenuButton.classList.remove("clicked");
+      BurgerMenuButton.innerHTML = "ME</br>NU";
 });
 
 let Chapitre4Lien = document.querySelector("#burgerchapter4");
 Chapitre4Lien.addEventListener("click", () => {
-        BurgerMenu.classList.remove("actif");
-        Body.classList.remove("actif");
-        BurgerMenuButton.classList.remove("clicked")
-        BurgerMenuButton.innerHTML = "ME</br>NU";
+      BurgerMenu.classList.remove("actif");
+      Body.classList.remove("actif");
+      BurgerMenuButton.classList.remove("clicked");
+      BurgerMenuButton.innerHTML = "ME</br>NU";
 });
 
 let Chapitre5Lien = document.querySelector("#burgerchapter5");
 Chapitre5Lien.addEventListener("click", () => {
-        BurgerMenu.classList.remove("actif");
-        Body.classList.remove("actif");
-        BurgerMenuButton.classList.remove("clicked")
-        BurgerMenuButton.innerHTML = "ME</br>NU";
+      BurgerMenu.classList.remove("actif");
+      Body.classList.remove("actif");
+      BurgerMenuButton.classList.remove("clicked");
+      BurgerMenuButton.innerHTML = "ME</br>NU";
 });
 
 UpPage.addEventListener("click", () => {
@@ -144,6 +152,19 @@ function cdiv(x) {              /* https://www.w3schools.com/howto/howto_js_medi
         DivImage.appendChild(DivImageContainer5);
         DivImage.appendChild(DivImageContainer6);
         DivImage.appendChild(DivImageContainer7);
+        BurgerMenuButton.classList.add("unseen");
+        if (navBurger.classList.contains("actif")) {
+          navBurger.classList.remove("actif");
+          Body.classList.remove("actif");
+          BurgerMenuButton.classList.remove("clicked");
+          BurgerMenuButton.innerHTML = "ME</br>NU";
+        }
+
+
+
+
+
+        
         
         
     } 
@@ -166,6 +187,12 @@ function ediv(x1) {
         Chapitre4.appendChild(Images[8]);
         Chapitre5.appendChild(Images[9]);
         Pages.removeChild(DivImage); 
+
+        
+
+        /*if(BurgerMenuButton.classList.contains("unseen")) {
+          BurgerMenuButton.classList.remove("unseen");
+        } */
     }
 }
 let x1 = window.matchMedia("(max-width: 999px)");
@@ -176,9 +203,7 @@ x1.addListener(ediv);
 
 ScrollTrigger.matchMedia({
     "(min-width:1000px)": function() {
-        let cover = document.querySelector(".couverture");
-let pages = document.querySelector(".pages");
-let InsideCover = document.querySelectorAll(".couverture__contenu");
+
 
 const tl = gsap.timeline({
   scrollTrigger: {
@@ -394,9 +419,11 @@ chapter5.addEventListener("click", (e) => {
   });
 });
 
-window.addEventListener("scroll", pop);
-function pop() {
-    if(Pages.contains(DivImage) == true) {
+        /* Ouverture livre */
+
+        window.addEventListener("scroll", pop);
+        function pop() {
+        if(Pages.contains(DivImage) == true) {
 
           if (Number(cover.style.transform.substring(10, 14)) < 20.6) {
             InsideCover.forEach((element) => element.classList.remove("hidden"));
@@ -411,16 +438,21 @@ function pop() {
             cover.classList.remove("hidden");
             pages.classList.add("hidden");
           }
-    }
-    console.log(window.scrollY + " = " + main.offsetTop)
-    if (window.scrollY < main.offsetTop) {
-      BurgerMenuButton.classList.add("unseen")
+          if (window.scrollY >= recuperateur) {
+            BurgerMenuButton.classList.remove("unseen")
+      
+          } else {
+            if (BurgerMenuButton.classList.contains("unseen")) {
 
-    } else {
-      BurgerMenuButton.classList.remove("unseen");
+            } else {
+              BurgerMenuButton.classList.add("unseen");
+            }
+            
+          }
     }
   
 }
+
     }
 })
 

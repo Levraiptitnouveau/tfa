@@ -75,6 +75,7 @@ body.actif {
     top:0;
 }
 
+
 header {
     width: 100vw;
     .nav {
@@ -353,12 +354,27 @@ a:hover {
     justify-content: center;
     flex-direction: column;
     h2 {
+        padding-left: 25px;
         font-family: 'Poltawski Nowy', serif;
         font-size: 37px;
     }
     ul {
+        list-style: none;
+        padding-left: 25px;
+        padding-right: 25px;
         li {
+            font-family: 'Poltawski Nowy', serif;
+            font-weight: normal;
             font-size: 29px;
+            a {
+                display: flex;
+                flex-wrap: nowrap;
+                text-decoration: none;
+                justify-content: space-between;
+                margin-top: 22px;
+                border-bottom:#C31A2F 2px solid;
+                padding-bottom: 1px;
+            }
         }
     }
 }
@@ -413,6 +429,10 @@ footer {
 }
 
 @media (min-width: 700px) {
+    .burgermenu_button {
+        left: 90%;
+        font-size: 18px;
+    }
     header {
         height: 80vh;
         h1 {
@@ -927,6 +947,9 @@ footer {
     body {
         overflow-x: hidden;
     }
+    .burgermenu_button {
+        top:-100vh;
+    }
     
     header {
         height: 150vh;
@@ -1012,6 +1035,9 @@ footer {
         padding: 0px;
         height: 90%;
         transform-origin: left;
+        p {
+            padding-right: 25px;
+        }
     }
     .otherpage {
         background-color: #F4F4F4;
@@ -1277,6 +1303,15 @@ footer {
   .hidden {
     display: none;
     }
+   /* .unseen {
+        top: -100vh;
+    } */
+}
+@media (min-width: 1200px) {
+    
+    .chapitre_1__contenu__partie_2 img {
+        grid-column: 1/5;
+    }
 }
 @media (min-width: 1300px) {
 
@@ -1348,9 +1383,7 @@ footer {
         padding-right: 50px;
         padding-left: 50px;
     }
-    .chapitre_1__contenu__partie_2 img {
-        grid-column: 1/5;
-    }
+    
     .handwritten {
         font-size: 41px;
         line-height: 38px;
