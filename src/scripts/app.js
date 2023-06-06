@@ -461,3 +461,46 @@ chapter5.addEventListener("click", (e) => {
 
 
 }
+
+if (main.classList.contains("ui-kit")) {
+  let Texte = document.querySelector(".texte_police");
+  let Texte1 = document.querySelector(".description_grand_titre");
+  let Texte2 = document.querySelector(".description_titre");
+  let Texte3 = document.querySelector(".description_sous_titre");
+  let Texte4 = document.querySelector(".description_texte");
+
+    function cdiv(x) {       
+      if (x.matches ) { 
+        Texte.innerHTML = "Police (Version Tablette)"
+        Texte1.innerHTML = "101 pixels - Poltawsky Nowy - noir";
+        Texte2.innerHTML = "68 pixels - Poltawsky Nowy - noir";
+        Texte3.innerHTML = "45 pixels - Crimson Text - noir"
+        Texte4.innerHTML = "20 pixels - Crimson text - noir"
+
+
+          
+          
+          
+      } 
+}
+let x = window.matchMedia("(min-width: 700px)");
+cdiv(x);
+x.addListener(cdiv);
+        
+
+function ediv(x1) { 
+    if (x1.matches) {
+      Texte.innerHTML = "Police (Version Téléphone)"
+      Texte1.innerHTML = "47 pixels - Poltawsky Nowy - noir";
+      Texte2.innerHTML = "37 pixels - Poltawsky Nowy - noir";
+      Texte3.innerHTML = "29 pixels - Crimson text - noir"
+      Texte4.innerHTML = "18 pixels - Crimson text - noir"
+
+
+
+    }
+}
+let x1 = window.matchMedia("(max-width: 699px)");
+ediv(x1);
+x1.addListener(ediv);
+}
