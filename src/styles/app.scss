@@ -82,6 +82,10 @@ body.actif {
     padding:0;
     font-family: 'Crimson Text', serif;
     font-weight: normal;
+    transition: transform 0.5s;
+}
+.return_link:hover {
+    transform: translateY(-10%);
 }
 .partie_1, .partie_2 { 
     padding-left: 17px;
@@ -223,9 +227,18 @@ h1 {
     font-family: 'Poltawski Nowy', serif;
     /* à changer */
     font-size: 47px;
-    color: black;
     margin: 0px;
-    font-weight: normal
+    font-weight: normal;
+    transition: 0.5s;
+    a {
+        color:black
+    }
+    a:hover {
+        font-size: unset;
+    }
+}
+h1:hover {
+    transform: translateY(-5%);
 }
 h2 {
     font-family: 'Crimson Text', serif;
@@ -1229,6 +1242,27 @@ footer {
             font-size: 24px;
         }
         padding: 22px 44px 0 44px;
+
+        .grand_titre, .titre, .sous_titre, .paragraphe {
+            margin-top: 40px;
+        }
+        .grand_titre {
+            margin-bottom: 30px;
+        }
+        .titre {
+            font-size:36px;
+            margin-bottom:20px;
+        }
+        .sous_titre {
+            font-size: 24px;
+            margin-bottom:10px;
+        }
+        .outside_text {
+            font-size: 20px;
+        }
+        .cache {
+            display: unset;
+        }
     }
     .partie_1 {
         box-shadow: -13px 0px 9px inset rgba(255, 138, 0, 0.25);
@@ -1706,6 +1740,22 @@ footer {
         .big {
             font-size: 22px;
         }
+
+        .grand_titre, .titre, .sous_titre, .paragraphe {
+            margin-top: 25px;
+        }
+        .grand_titre {
+            margin-bottom: 30px;
+        }
+        .titre {
+            font-size:41px;
+            margin-bottom:20px;
+        }
+        .sous_titre {
+            font-size: 27px;
+            margin-bottom:10px;
+        }
+
         
         padding: 25px 50px 25px 50px;
     }

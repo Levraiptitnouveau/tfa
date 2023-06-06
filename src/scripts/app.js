@@ -469,6 +469,43 @@ if (main.classList.contains("ui-kit")) {
   let Texte3 = document.querySelector(".description_sous_titre");
   let Texte4 = document.querySelector(".description_texte");
 
+    
+
+    function ddiv(x3) {       
+      if (x3.matches ) { 
+        Texte.innerHTML = "Police (Version Tablette)"
+        Texte1.innerHTML = "101 pixels - Poltawsky Nowy - noir";
+        Texte2.innerHTML = "68 pixels - Poltawsky Nowy - noir";
+        Texte3.innerHTML = "45 pixels - Crimson Text - noir"
+        Texte4.innerHTML = "20 pixels - Crimson text - noir"
+
+
+          
+          
+          
+      } 
+    }
+    let x3 = window.matchMedia("(max-width: 999px)");
+    ddiv(x3);
+    x3.addListener(ddiv);
+
+    function gdiv(x5) {       
+      if (x5.matches ) { 
+        Texte.innerHTML = "Police (Version PC > 1000px)"
+        Texte2.innerHTML = "36 pixels - Poltawsky Nowy - noir";
+        Texte3.innerHTML = "24 pixels - Crimson Text - noir"
+        Texte4.innerHTML = "16 pixels - Crimson text - noir"
+    
+    
+          
+          
+          
+      } 
+    }
+    let x5 = window.matchMedia("(max-width: 1599px)");
+    gdiv(x5);
+    x5.addListener(gdiv); 
+
     function cdiv(x) {       
       if (x.matches ) { 
         Texte.innerHTML = "Police (Version Tablette)"
@@ -482,12 +519,13 @@ if (main.classList.contains("ui-kit")) {
           
           
       } 
-}
-let x = window.matchMedia("(min-width: 700px)");
-cdiv(x);
-x.addListener(cdiv);
+    }
+    let x = window.matchMedia("(min-width: 700px)");
+    cdiv(x);
+    x.addListener(cdiv);
         
 
+    
 function ediv(x1) { 
     if (x1.matches) {
       Texte.innerHTML = "Police (Version Téléphone)"
@@ -503,4 +541,43 @@ function ediv(x1) {
 let x1 = window.matchMedia("(max-width: 699px)");
 ediv(x1);
 x1.addListener(ediv);
+
+
+
+function bdiv(x2) {       
+  if (x2.matches ) { 
+    Texte.innerHTML = "Police (Version PC > 1000px)"
+    Texte2.innerHTML = "36 pixels - Poltawsky Nowy - noir";
+    Texte3.innerHTML = "24 pixels - Crimson Text - noir"
+    Texte4.innerHTML = "16 pixels - Crimson text - noir"
+
+
+      
+      
+      
+  } 
+}
+let x2 = window.matchMedia("(min-width: 1000px)");
+bdiv(x2);
+x2.addListener(bdiv);
+
+
+function fdiv(x4) {       
+  if (x4.matches ) { 
+    Texte.innerHTML = "Police (Version PC > 1600px)"
+    Texte2.innerHTML = "41 pixels - Poltawsky Nowy - noir";
+    Texte3.innerHTML = "27 pixels - Crimson Text - noir"
+    Texte4.innerHTML = "18 pixels - Crimson text - noir"
+
+
+      
+      
+      
+  } 
+}
+let x4 = window.matchMedia("(min-width: 1600px)");
+fdiv(x4);
+x4.addListener(fdiv); 
+
+
 }
