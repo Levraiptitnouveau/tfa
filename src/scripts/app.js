@@ -3,9 +3,16 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
-let BurgerMenuButton = document.querySelector(".burgermenu_button");
-let BurgerMenu = document.querySelector(".nav_burger");
+let main = document.querySelector("main");
 let UpPage = document.querySelector(".uppage");
+UpPage.addEventListener("click", () => {
+  window.scrollTo(0, 0)
+})
+
+
+if(main.classList.contains("principal") == true) {
+  let BurgerMenuButton = document.querySelector(".burgermenu_button");
+let BurgerMenu = document.querySelector(".nav_burger");
 let Body = document.querySelector("body");
 let Images = document.querySelectorAll("img");
 let ConteneurImage1 = document.querySelector(".prologue");
@@ -36,7 +43,6 @@ let DivImageContainer6 = document.createElement('div');
 DivImageContainer6.classList.add('image_8');
 let DivImageContainer7 = document.createElement('div');
 DivImageContainer7.classList.add('image_9');
-let main = document.querySelector("main");
 let cover = document.querySelector(".couverture");
 let pages = document.querySelector(".pages");
 let InsideCover = document.querySelectorAll(".couverture__contenu");
@@ -110,9 +116,6 @@ Chapitre5Lien.addEventListener("click", () => {
       BurgerMenuButton.innerHTML = "ME</br>NU";
 });
 
-UpPage.addEventListener("click", () => {
-    window.scrollTo(0, 0)
-})
 
 /* Ecouteur taille fenêtre */
 
@@ -456,3 +459,5 @@ chapter5.addEventListener("click", (e) => {
     }
 })
 
+
+}
