@@ -2,6 +2,7 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
 let BurgerMenuButton = document.querySelector(".burgermenu_button");
 let BurgerMenu = document.querySelector(".nav_burger");
 let UpPage = document.querySelector(".uppage");
@@ -25,6 +26,16 @@ let DivImageContainer1 = document.createElement('div');
 DivImageContainer1.classList.add("image_2")
 let DivImageContainer2 = document.createElement('div');
 DivImageContainer2.classList.add("image_4")
+let DivImageContainer3 = document.createElement('div');
+DivImageContainer3.classList.add('image_5');
+let DivImageContainer4 = document.createElement('div');
+DivImageContainer4.classList.add('image_6');
+let DivImageContainer5 = document.createElement('div');
+DivImageContainer5.classList.add('image_7');
+let DivImageContainer6 = document.createElement('div');
+DivImageContainer6.classList.add('image_8');
+let DivImageContainer7 = document.createElement('div');
+DivImageContainer7.classList.add('image_9');
 /* Borgir menu */
 
 BurgerMenuButton.addEventListener("click", () => {
@@ -73,13 +84,23 @@ function cdiv(x) {              /* https://www.w3schools.com/howto/howto_js_medi
 
         DivImageContainer.appendChild(Images[2]);
         DivImageContainer1.appendChild(Images[5]);
-        DivImageContainer2.appendChild(Images[7])
+        DivImageContainer2.appendChild(Images[7]);
+        DivImageContainer3.appendChild(Videos[0]);
+        DivImageContainer4.appendChild(Videos[1]);
+        DivImageContainer5.appendChild(RandomBookSection);
+        DivImageContainer6.appendChild(Images[8]);
+        DivImageContainer7.appendChild(Images[9]);
 
         DivImage.appendChild(DivImageContainer);
         DivImage.appendChild(DivImageContainer1);
         ImagesGear.classList.add("image_3")
         DivImage.appendChild(ImagesGear);
         DivImage.appendChild(DivImageContainer2);
+        DivImage.appendChild(DivImageContainer3);
+        DivImage.appendChild(DivImageContainer4);
+        DivImage.appendChild(DivImageContainer5);
+        DivImage.appendChild(DivImageContainer6);
+        DivImage.appendChild(DivImageContainer7);
         
     } 
 }
@@ -176,6 +197,7 @@ tl.to(".chapitre_3__contenu__partie_1", {opacity: 0});
 tl.to(".image_4", {yPercent: -400}, "<");
 tl.from(".chapitre_3__contenu__partie_2", {opacity:0}, "<");
 tl.to(".chapitre_3__contenu__partie_2", {yPercent: -100}, "<");
+tl.to(".image_5", {yPercent: -400}, "<");
 tl.to(".chapitre_3__contenu__partie_1", {yPercent: -100});
 
 
@@ -183,19 +205,26 @@ tl.to(".chapitre_3__contenu__partie_2", {yPercent: -102});
 tl.to(".chapitre_3__contenu__partie_2", {opacity: 0});
 tl.from(".chapitre_3__contenu__partie_3", {opacity:0}, "<");
 tl.to(".chapitre_3__contenu__partie_3", {yPercent: -200}, "<");
+tl.to(".image_5", {yPercent:-500}, "<")
+tl.to(".image_6", {yPercent:-500}, "<")
 tl.to(".chapitre_3__contenu__partie_2", {yPercent: -200});
 
 tl.to(".chapitre_3__contenu__partie_3", {yPercent: -202});
 tl.to(".chapitre_3__contenu__partie_3", {opacity: 0});
+tl.to(".image_6", {yPercent:-600}, "<");
+tl.to(".image_7", {yPercent:-600}, "<");
 tl.from(".chapitre_3__contenu__partie_4", {opacity:0}, "<");
 tl.to(".chapitre_3__contenu__partie_4", {yPercent: -300}, "<");
 tl.to(".chapitre_3__contenu__partie_3", {yPercent: -300});
 
 tl.to(".chapitre_3", { yPercent: -302 });
+tl.to(".image_7", {yPercent:-602}, "<")
 tl.to(".chapitre_3", { opacity: 0 });
 tl.to(".chapitre_3", { yPercent: -400 }, "<");
+tl.to(".image_7", {yPercent:-700}, "<")
 tl.from(".chapitre_4", {opacity: 0});
 tl.to(".chapitre_4", { yPercent: -400 }, "<");
+tl.to(".image_8", {yPercent:-700}, "<");
 tl.addLabel("chapitre 4");
 
 tl.to(".chapitre_4__contenu__partie_1", {yPercent: -2});
@@ -213,13 +242,113 @@ tl.to(".chapitre_4__contenu__partie_2", {yPercent: -200});
 tl.to(".chapitre_4", { yPercent: -402 });
 tl.to(".chapitre_4", { opacity: 0 });
 tl.to(".chapitre_4", { yPercent: -500 }, "<");
+tl.to(".image_8", {yPercent:-800}, "<");
 tl.from(".chapitre_5", {opacity: 0});
 tl.to(".chapitre_5", { yPercent: -500 }, "<");
+tl.to(".image_9", {yPercent:-800}, "<");
 tl.addLabel("chapitre 5");
 tl.to(".chapitre_5", {yPercent:-502});
 tl.to(".chapitre_5", {yPercent:-600});
 tl.to(".chapitre_5", {opacity:0}, "<");
 tl.to(".fin", {yPercent:-600}, "<");
+
+function labelToScroll(timeline, label) {
+  console.log("scroll?", timeline, label);
+  let st = timeline.scrollTrigger;
+  
+  let val = (
+    st.start +
+    (st.end - st.start) * (timeline.labels[label] / timeline.duration())
+  )
+  console.log(val, "wat")
+  console.log(timeline.duration())
+  return val ;
+}
+
+let link = document.querySelector("#link");
+let chapter1 = document.querySelector("#chapter1")
+let chapter2 = document.querySelector("#chapter2")
+let chapter3 = document.querySelector("#chapter3")
+let chapter4 = document.querySelector("#chapter4")
+let chapter5 = document.querySelector("#chapter5")
+
+link.addEventListener("click", (e) => {
+  console.log("boop");
+  e.preventDefault();
+
+  gsap.to(window, {
+    scrollTo: labelToScroll(tl, "prologue"),
+    duration: 2,
+    onStart: () => {
+      console.log("scrolling");
+    }
+  });
+});
+
+chapter1.addEventListener("click", (e) => {
+  console.log("boop");
+  e.preventDefault();
+
+  gsap.to(window, {
+    scrollTo: labelToScroll(tl, "chapitre 1"),
+    duration: 2,
+    onStart: () => {
+      console.log("scrolling");
+    }
+  });
+});
+
+chapter2.addEventListener("click", (e) => {
+  console.log("boop");
+  e.preventDefault();
+
+  gsap.to(window, {
+    scrollTo: labelToScroll(tl, "chapitre 2"),
+    duration: 2,
+    onStart: () => {
+      console.log("scrolling");
+    }
+  });
+});
+
+chapter3.addEventListener("click", (e) => {
+  console.log("boop");
+  e.preventDefault();
+
+  gsap.to(window, {
+    scrollTo: labelToScroll(tl, "chapitre 3"),
+    duration: 2,
+    onStart: () => {
+      console.log("scrolling");
+    }
+  });
+});
+
+chapter4.addEventListener("click", (e) => {
+  console.log("boop");
+  e.preventDefault();
+
+  gsap.to(window, {
+    scrollTo: labelToScroll(tl, "chapitre 4"),
+    duration: 2,
+    onStart: () => {
+      console.log("scrolling");
+    }
+  });
+});
+
+chapter5.addEventListener("click", (e) => {
+  console.log("boop");
+  e.preventDefault();
+
+  gsap.to(window, {
+    scrollTo: labelToScroll(tl, "chapitre 5"),
+    duration: 2,
+    onStart: () => {
+      console.log("scrolling");
+    }
+  });
+});
 
 window.addEventListener("scroll", pop);
 function pop() {
