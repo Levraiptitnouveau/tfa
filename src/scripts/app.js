@@ -6,7 +6,12 @@ gsap.registerPlugin(ScrollToPlugin);
 let main = document.querySelector("main");
 let UpPage = document.querySelector(".uppage");
 UpPage.addEventListener("click", () => {
-  window.scrollTo(0, 0)
+  gsap.to(window, {
+    scrollTo: 0,
+    duration: 2,
+    onStart: () => {
+      console.log("scrolling");
+    }})
 })
 
 
@@ -48,7 +53,69 @@ let pages = document.querySelector(".pages");
 let InsideCover = document.querySelectorAll(".couverture__contenu");
 let navBurger = document.querySelector(".nav_burger");
 let recuperateur = main.offsetTop;
-console.log(main.offsetTop)
+let RandomBook = document.querySelector(".random_book__cover");
+let RandomBookButton = document.querySelector(".discover");
+let TitreLivre = document.querySelector(".book_title")
+console.log(main.offsetTop);
+let Livres = [ 
+  '<img src="assets/images/livres/radiant.png" alt="Couverture Radiant">',
+  '<img src="assets/images/livres/arena.png" alt="Couverture Arena">',
+  '<img src="assets/images/livres/chevalier_licorne.png" alt="Couverture Le Chevalier à Licorne">',
+  '<img src="assets/images/livres/dreamland.png" alt="Couverture Dreamland">',
+  '<img src="assets/images/livres/frnk.png" alt="Couverture FRNK">',
+  '<img src="assets/images/livres/grand_retournement.png" alt="Couverture Le Grand Retournement">',
+  '<img src="assets/images/livres/grange_passager.png" alt="Couverture Le passager">',
+  '<img src="assets/images/livres/imbattable.png" alt="Couverture Imbattable">',
+  '<img src="assets/images/livres/instant_present.png" alt="Couverture L\'instant présent">',
+  '<img src="assets/images/livres/nom_secret_chose.png" alt="Couverture Le nom secret des choses">',
+  '<img src="assets/images/livres/ripper.png" alt="Couverture Ripper">',
+  '<img src="assets/images/livres/space_punch.png" alt="Couverture Space Punch">',
+  '<img src="assets/images/livres/spirou_fantasio.png" alt="Couverture Spirou et Fantasio">',
+  '<img src="assets/images/livres/telemaque.png" alt="Couverture Telemaque">'
+]
+
+let LiensLivres = [
+  '<a href="https://www.allskreen.com/webtoon/series/4">Radiant</a>',
+  '<a href="https://www.webtoonfactory.com/fr/serie/arena/">Arena</a>',
+  '<a href="https://www.babelio.com/livres/Mirande-Le-Chevalier-a-la-licorne-tome-1--Sur-les-traces-/349057">Le Chevalier à la licorne</a>',
+  '<a href="https://www.pika.fr/livre/dreamland-t01-9782811666644">Dreamland</a>',
+  '<a href="https://www.dupuis.com/seriebd/frnck/11504">FRNK</a>',
+  '<a href="https://www.webtoonfactory.com/fr/webtoons/158-le-grand-retournement-saison-1/">Le grand retournement</a>',
+  '<a href="https://www.babelio.com/livres/Grange-Le-passager/280953">Le passager</a>',
+  '<a href="https://www.dupuis.com/seriebd/imbattable/12717">Imbattable</a>',
+  '<a href="https://www.guillaumemusso.com/livres/linstant-present-9782845637795">L\'instant présent</a>',
+  '<a href="https://www.babelio.com/livres/Rinkel-Le-nom-secret-des-choses/1153441">Le nom secret des choses</a>',
+  '<a href="https://www.allskreen.com/webtoon/series/65">Ripper</a>',
+  '<a href="https://www.allskreen.com/webtoon/series/18">Space Punch</a>',
+  '<a href="https://www.dupuis.com/seriebd/spirou-et-fantasio/124">Spirou et Fantasio</a>',
+  '<a href="https://www.dupuis.com/seriebd/telemaque/14148">Telemaque</a>',
+  
+]
+
+/* Boutton découverte */
+
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+}
+let Chiffre
+RandomBookButton.addEventListener("click", () => {
+  if (TitreLivre.classList.contains("lien_livre") == false) {
+    TitreLivre.classList.add("lien_livre");
+  }
+  
+  let Cijfer = getRandomIntInclusive(0, 13)
+  console.log(Cijfer + " est différent de " + Chiffre)
+  while (Cijfer == Chiffre) {
+    Cijfer = getRandomIntInclusive(0, 13)
+  }
+    RandomBook.classList.add("book");
+    RandomBook.innerHTML = Livres[Cijfer];
+    TitreLivre.innerHTML = LiensLivres[Cijfer];
+    Chiffre = Cijfer
+  
+})
 
 /* Borgir menu */
 
@@ -152,7 +219,8 @@ function cdiv(x) {              /* https://www.w3schools.com/howto/howto_js_medi
         DivImage.appendChild(DivImageContainer2);
         DivImage.appendChild(DivImageContainer3);
         DivImage.appendChild(DivImageContainer4);
-        DivImage.appendChild(DivImageContainer5);
+        RandomBookSection.classList.add("image_7")
+        DivImage.appendChild(RandomBookSection);
         DivImage.appendChild(DivImageContainer6);
         DivImage.appendChild(DivImageContainer7);
         BurgerMenuButton.classList.add("unseen");

@@ -41,6 +41,43 @@
       opacity:1;
     }
   }
+  /*
+  @keyframes exciter {
+    0% {
+        transform: rotate(5deg);
+    }
+    10% {
+        transform: rotate(-5deg);
+    }
+    20% {
+        transform: rotate(5deg);
+    }
+    40% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    60% {
+        transform: rotate(5deg);
+    }
+    70% {
+        transform: rotate(-5deg);
+    }
+    80% {
+        transform: rotate(-5deg);
+    }
+    85% {
+        transform: scaleY(0.8);
+    }
+    90% {
+        transform: scaleY(1);
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+  } */
 
 body {
     background-color: #E5DABC;
@@ -70,6 +107,26 @@ body.actif {
     white-space:normal;
     transition: 0.5s;
 
+}
+.discover {
+    /* animation: exciter 1.5s; */
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+.discover:hover {
+    transform: translateY(-10%);
+}
+.book_title {
+    a:hover {
+        font-size:unset;
+    }
+    transition: transform 0.5s;
+}
+.lien_livre {
+    text-align: center;
+}
+.lien_livre:hover {
+    transform: translateY(-10%);
 }
 
 .burgermenu_button.clicked {
@@ -575,6 +632,20 @@ footer {
 .cache {
     display:none;
 }
+.demo_button {
+
+        .book {
+            background-color: unset;
+            width: fit-content;
+            img {
+                border: unset;
+                width: 300px;
+                margin:0;
+            }
+        }
+
+}
+
 
 @media (min-width: 700px) {
     .conteneur_sections.guide {
@@ -988,6 +1059,16 @@ footer {
             }
         }
     }
+
+    .demo_button {
+
+        .book {
+            img {
+                width: 450px;
+            }
+        }
+
+}
 
 }
 @media(min-width: 800px) {
@@ -1438,6 +1519,7 @@ footer {
             min-height: 100%;
             display: flex;
             align-items: center;
+            justify-content: center;
             img {
                 width:100%;
                 border: solid 1px black;
@@ -1463,6 +1545,23 @@ footer {
                 }
             }
             
+        }
+        .image_7 {
+            justify-content: center;
+            margin:0px;
+            button {
+                margin:0;
+            }
+            .random_book {
+                height: unset;
+                width: unset;
+                img {
+                    max-width: 100%;
+                }
+                p {
+                    margin:0;
+                }
+            }
         }
         
     }
@@ -1655,6 +1754,18 @@ footer {
    /* .unseen {
         top: -100vh;
     } */
+
+    .demo_button {
+
+        .book {
+
+            img {
+                width: 100%;
+            }
+        }
+
+
+}
 }
 @media (min-width: 1200px) {
     
