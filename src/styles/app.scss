@@ -31,6 +31,7 @@
       transform: rotate(360deg);
     }
   }
+  
   @keyframes apparition{
     from{
       transform: translateY(30px);
@@ -39,6 +40,20 @@
     to{
       transform: translateY(0px);
       opacity:1;
+    }
+  }
+  @keyframes weird {
+    0% {
+        scale:1.5;
+    }
+    60% {
+        scale:1;
+    }
+    80% {
+        scale:1;
+    }
+    100% {
+        scale: 1.5;
     }
   }
 
@@ -99,6 +114,9 @@ body.actif {
     overflow: hidden;
 }
 
+
+
+
     .schema__sondage {
         flex-grow: 1;
         display: flex;
@@ -146,11 +164,15 @@ body.actif {
 .discover:hover {
     transform: translateY(-10%);
 }
+.searcher {
+    box-shadow: 5px 5px 25px inset black;
+}
 .book_title {
     a:hover {
         font-size:unset;
     }
     transition: transform 0.5s;
+    text-align: center;
 }
 .lien_livre {
     text-align: center;
@@ -546,6 +568,7 @@ a:hover {
             color: white;
             font-family: 'Crimson Text', serif;
             font-size: 29px;
+            aspect-ratio: 0.6920462271;
         }
         p {
             font-size: 37px;
@@ -572,6 +595,11 @@ a:hover {
 }
 .signature__liendwt__logo {
     fill:#C31A2F;
+    transition: transform 0.5s;
+}
+.signature__liendwt__logo:hover {
+    fill: black;
+    transform: translateY(-10%);
 }
 .nav_burger {
     position: absolute;
@@ -685,7 +713,52 @@ footer {
         margin-bottom: 44px;
     }
 }
+.prologue {
 
+    &__image {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        aspect-ratio: 0.8742873432155074;
+        border: 1px solid black;
+        margin-bottom: 100px;
+        img:first-child {
+            position: absolute;
+            animation: weird 60s infinite cubic-bezier(0,0,0,0);
+        }
+        img {
+            border: none;
+            margin: 0;
+        }
+    } 
+}
+
+.gear {
+    position: relative;
+    margin-bottom: 100px;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 0.8742873432155074;
+    border: 1px solid black;
+    svg {
+        position: absolute;
+        width:20%;
+        left: 72%;
+        top: 2%;
+        animation: rotation 4s infinite cubic-bezier(0,0,0,0);
+    }
+    svg:first-child {
+        width: 16%;
+        top:12%;
+        left:60%;
+        transform: rotate(180deg) scaleY(-1);
+        animation: rotation 4s reverse infinite cubic-bezier(0,0,0,0);
+    }
+    img {
+        border: none;
+        margin: 0;
+    }
+}
 
 @media (min-width: 700px) {
     .conteneur_sections.guide {
@@ -819,9 +892,7 @@ footer {
         p {
             grid-column: 1/-1;
         }
-        img {
-            grid-column: 1/-1;
-        }
+
     }
     .chapitre_1, .chapitre_3, .chapitre_4 {
         div {
@@ -1112,6 +1183,12 @@ footer {
 .schema__sondage {
     margin-top: 50px;
 }
+.prologue {
+    &__image {
+        grid-column:1/-1;
+        margin-bottom: 120px;
+    }
+}
 
 }
 @media(min-width: 800px) {
@@ -1172,9 +1249,7 @@ footer {
         p {
             grid-column: 1/-2;
         }
-        img {
-            grid-column: 2/-1;
-        }
+
     }
     .chapitre_1__contenu__partie_1{
         p {
@@ -1330,6 +1405,11 @@ footer {
     }
     .important.sondage {
         grid-column: 2/-1;
+    }
+    .prologue {
+        &__image {
+            grid-column: 2/-1;
+        }
     }
     
 }
@@ -1546,17 +1626,7 @@ footer {
         box-shadow:-13px 0px 9px inset rgba(255, 138, 0, 0.25);
         margin:0px;
     }
-    .gear {
-        position: relative;
-        svg {
-            width: 80px;
-            height: 80px;
-            position: absolute;
-            top: 23%;
-            left: 62%;
-            animation: rotation 5s infinite cubic-bezier(0,0,0,0);
-        }
-    }
+
     .images {
         width: 50%;
         height: 100%; /* 500%; */
@@ -1604,7 +1674,7 @@ footer {
             justify-content: center;
             margin:0px;
             button {
-                margin:0;
+                margin:0 0 2% 0;
             }
             .random_book {
                 height: unset;
@@ -1839,8 +1909,24 @@ footer {
         .margin_top {
             margin-top: 25px;
         }
-        
-        
+        .image_1 {
+            .prologue {
+                &__image {
+                    margin: 0;
+                    padding: 0;
+                    img {
+                        border: 0;
+                    }
+                }
+            } 
+        }
+        .image_3 {
+            .gear {
+                padding:0;
+
+                margin: 0;
+            } 
+        }
 }
 @media (min-width: 1200px) {
     

@@ -48,6 +48,8 @@ let DivImageContainer6 = document.createElement('div');
 DivImageContainer6.classList.add('image_8');
 let DivImageContainer7 = document.createElement('div');
 DivImageContainer7.classList.add('image_9');
+let DivImageContainer8 = document.createElement('div');
+DivImageContainer8.classList.add("image_3");
 let cover = document.querySelector(".couverture");
 let pages = document.querySelector(".pages");
 let InsideCover = document.querySelectorAll(".couverture__contenu");
@@ -188,34 +190,34 @@ Chapitre5Lien.addEventListener("click", () => {
 
 let DivImage = document.createElement("div");
 DivImage.classList.add("images");
-
+let Image2 = document.querySelector(".prologue__image")
 function cdiv(x) {              /* https://www.w3schools.com/howto/howto_js_media_queries.asp */
     if (x.matches && ConteneurImage1.contains(Images[2]) == true) { 
-        ConteneurImage1.removeChild(Images[2]);
-        Chapitre1.removeChild(Images[5]);
+        ConteneurImage1.removeChild(Image2);
+        Chapitre1.removeChild(Images[6]);
         Chapitre2.removeChild(ImagesGear);
-        ConteneurImage4.removeChild(Images[7]);
+        ConteneurImage4.removeChild(Images[8]);
         ConteneurVideo1.removeChild(Videos[0]);
         ConteneurVideo2.removeChild(Videos[1]);
         ConteneurVideo2.removeChild(RandomBookSection);
-        Chapitre4.removeChild(Images[8]);
-        Chapitre5.removeChild(Images[9]);
+        Chapitre4.removeChild(Images[9]);
+        Chapitre5.removeChild(Images[10]);
 
         Pages.appendChild(DivImage);
 
-        DivImageContainer.appendChild(Images[2]);
-        DivImageContainer1.appendChild(Images[5]);
-        DivImageContainer2.appendChild(Images[7]);
+        DivImageContainer.appendChild(Image2);
+        DivImageContainer1.appendChild(Images[6]);
+        DivImageContainer2.appendChild(Images[8]);
         DivImageContainer3.appendChild(Videos[0]);
         DivImageContainer4.appendChild(Videos[1]);
         DivImageContainer5.appendChild(RandomBookSection);
-        DivImageContainer6.appendChild(Images[8]);
-        DivImageContainer7.appendChild(Images[9]);
+        DivImageContainer6.appendChild(Images[9]);
+        DivImageContainer7.appendChild(Images[10]);
+        DivImageContainer8.appendChild(ImagesGear)
 
         DivImage.appendChild(DivImageContainer);
         DivImage.appendChild(DivImageContainer1);
-        ImagesGear.classList.add("image_3")
-        DivImage.appendChild(ImagesGear);
+        DivImage.appendChild(DivImageContainer8);
         DivImage.appendChild(DivImageContainer2);
         DivImage.appendChild(DivImageContainer3);
         DivImage.appendChild(DivImageContainer4);
@@ -248,15 +250,15 @@ x.addListener(cdiv);
 function ediv(x1) { 
     if (x1.matches && Pages.contains(DivImage) == true) {
         
-        ConteneurImage1.appendChild(Images[2]);
-        Chapitre1.appendChild(Images[5]);
+        ConteneurImage1.appendChild(Image2);
+        Chapitre1.appendChild(Images[6]);
         Chapitre2.appendChild(ImagesGear);
-        ConteneurImage4.appendChild(Images[7]);
+        ConteneurImage4.appendChild(Images[8]);
         ConteneurVideo1.appendChild(Videos[0]);
         ConteneurVideo2.prepend(Videos[1]);
         ConteneurVideo2.appendChild(RandomBookSection);
-        Chapitre4.appendChild(Images[8]);
-        Chapitre5.appendChild(Images[9]);
+        Chapitre4.appendChild(Images[9]);
+        Chapitre5.appendChild(Images[10]);
         Pages.removeChild(DivImage); 
 
         
@@ -362,9 +364,13 @@ tl.to(".image_7", {yPercent:-602}, "<")
 tl.to(".chapitre_3", { opacity: 0 });
 tl.to(".chapitre_3", { yPercent: -400 }, "<");
 tl.to(".image_7", {yPercent:-700}, "<")
+tl.to(".images", {backgroundColor: "black"});
+tl.to(".images", {boxShadow: "0 0 0"}, "<");
+tl.to(".image_8", {opacity:0}, "<");
+tl.to(".image_8", {yPercent:-700});
 tl.from(".chapitre_4", {opacity: 0});
 tl.to(".chapitre_4", { yPercent: -400 }, "<");
-tl.to(".image_8", {yPercent:-700}, "<");
+tl.to(".image_8", {opacity:1}, "<");
 tl.addLabel("chapitre 4");
 
 tl.to(".chapitre_4__contenu__partie_1", {yPercent: -2});
@@ -380,9 +386,12 @@ tl.to(".chapitre_4__contenu__partie_3", {yPercent: -200}, "<");
 tl.to(".chapitre_4__contenu__partie_2", {yPercent: -200});
 
 tl.to(".chapitre_4", { yPercent: -402 });
+tl.to(".image_8", {opacity:0}, "<");
 tl.to(".chapitre_4", { opacity: 0 });
 tl.to(".chapitre_4", { yPercent: -500 }, "<");
 tl.to(".image_8", {yPercent:-800}, "<");
+tl.to(".images", {backgroundColor: "#F4F4F4"});
+tl.to(".images", {boxShadow: "13px 0 9px inset rgba(255, 138, 0, 0.25)"}, "<");
 tl.from(".chapitre_5", {opacity: 0});
 tl.to(".chapitre_5", { yPercent: -500 }, "<");
 tl.to(".image_9", {yPercent:-800}, "<");
