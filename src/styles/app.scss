@@ -41,6 +41,18 @@
       opacity:1;
     }
   }
+
+
+
+  @keyframes fondu {
+    from{
+        opacity:0;
+        
+    }
+    to{
+        opacity: 1;
+    }
+  }
   /*
   @keyframes exciter {
     0% {
@@ -86,6 +98,24 @@ body {
 body.actif {
     overflow: hidden;
 }
+
+    .schema__sondage {
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-between;
+        svg {
+            width:15%;
+            .thickness {
+                stroke: black;
+                stroke-width: 10px;
+            }
+        }
+    }
+    .inside_svg {
+        animation: fondu 5s cubic-bezier(0,0,0,0);
+        stroke: black;
+        stroke-width: 15px;
+    }
 .burgermenu_button {
     position: fixed;
     top: -16px;
@@ -645,6 +675,16 @@ footer {
         }
 
 }
+.schema__sondage {
+    margin-top: 22px;
+}
+
+.partie_1.sondage, .partie_2.sondage {
+    .important.sondage {
+        margin-top: 22px;
+        margin-bottom: 44px;
+    }
+}
 
 
 @media (min-width: 700px) {
@@ -1068,6 +1108,9 @@ footer {
             }
         }
 
+    }
+.schema__sondage {
+    margin-top: 50px;
 }
 
 }
@@ -1276,6 +1319,17 @@ footer {
         .important {
             grid-column: 1/-1;
         }
+    }
+
+    .titre.sondage {
+        grid-column: 1/2;
+    }
+    .schema__sondage {
+        grid-column: 2/-1;
+        margin:0px;
+    }
+    .important.sondage {
+        grid-column: 2/-1;
     }
     
 }
@@ -1763,9 +1817,30 @@ footer {
                 width: 100%;
             }
         }
+        }
 
-
-}
+        .titre.sondage {
+            display: flex;
+            margin:0;
+            align-items: center;
+        }
+        .partie_1 {
+            .margin_survey {
+                margin-bottom:50px;
+            }
+        }
+        .partie_2.sondage {
+            .important.sondage {
+                margin-top:25px;
+                margin-bottom:25px;
+            }
+        }
+    
+        .margin_top {
+            margin-top: 25px;
+        }
+        
+        
 }
 @media (min-width: 1200px) {
     
@@ -1828,6 +1903,7 @@ footer {
     .chapitre_5 p {
         grid-column: 1/-2;
     }
+    
 }
 @media (min-width: 1600px) {
     .conteneur_sections.guide {
@@ -1991,6 +2067,7 @@ footer {
             height: 80%;
         }
     }
+    
 }
 @media (max-height: 900px) {
     section {
