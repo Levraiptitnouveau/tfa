@@ -651,7 +651,6 @@ a:hover {
 }
 .chapitre_3__video {
     width: 100%;
-    height: 210px;
     border: 1px solid black;
     margin-bottom: 32px;
 }
@@ -1051,9 +1050,14 @@ footer {
         }
     }
     .chapitre_3__video {
-        height: 330px;
         grid-column: 1/-1;
     }
+    .chapitre_3__contenu__partie_4 {
+        .chapitre_3__video {
+            grid-column: 1/-1;
+        }
+    }
+    
     .chapitre_1__contenu__partie_3 {
         ul {
             margin-bottom:0;
@@ -1236,6 +1240,14 @@ footer {
 
 }
 @media(min-width: 800px) {
+    .chapitre_3__video {
+        grid-column: 2/-1;
+    }
+    .chapitre_3__contenu__partie_4 {
+        .chapitre_3__video {
+            grid-column: 1/-2;
+        }
+    }
     .partie_1,.partie_2 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -1724,7 +1736,6 @@ footer {
             }
             .chapitre_3__video {
                 width: 100%;
-                height: 300px;
                 position: unset;
             }
             .demo_button {
