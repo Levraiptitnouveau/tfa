@@ -115,6 +115,9 @@ body {
 body.actif {
     overflow: hidden;
 }
+.fullscreen_image {
+    display: none;
+}
 
 
 
@@ -677,6 +680,7 @@ footer {
     align-items: center;
 }
 .uppage {
+    font-size: 0px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -1108,7 +1112,7 @@ footer {
         }
     }
     .chapitre_4 {
-        img {
+        picture {
             grid-column: 1/-1;
         }
     }
@@ -1390,7 +1394,7 @@ footer {
         }
     }
     .chapitre_4 {
-        img {
+        picture {
             grid-column: 1/-2;
         }
     }

@@ -10,7 +10,6 @@ UpPage.addEventListener("click", () => {
     scrollTo: 0,
     duration: 2,
     onStart: () => {
-      console.log("scrolling");
     }})
 })
 
@@ -58,7 +57,6 @@ let recuperateur = main.offsetTop;
 let RandomBook = document.querySelector(".random_book__cover");
 let RandomBookButton = document.querySelector(".discover");
 let TitreLivre = document.querySelector(".book_title")
-console.log(main.offsetTop);
 
 
 let Livres = [ 
@@ -110,7 +108,6 @@ RandomBookButton.addEventListener("click", () => {
   }
   
   let Cijfer = getRandomIntInclusive(0, 13)
-  console.log(Cijfer + " est différent de " + Chiffre)
   while (Cijfer == Chiffre) {
     Cijfer = getRandomIntInclusive(0, 13)
   }
@@ -201,7 +198,8 @@ Chapitre5Lien.addEventListener("click", () => {
 
 let DivImage = document.createElement("div");
 DivImage.classList.add("images");
-let Image2 = document.querySelector(".prologue__image")
+let Image2 = document.querySelector(".prologue__image");
+let ImageChapter4 = document.querySelector(".picture")
 function cdiv(x) {              /* https://www.w3schools.com/howto/howto_js_media_queries.asp */
     if (x.matches && ConteneurImage1.contains(Images[2]) == true) { 
         ConteneurImage1.removeChild(Image2);
@@ -211,7 +209,7 @@ function cdiv(x) {              /* https://www.w3schools.com/howto/howto_js_medi
         ConteneurVideo1.removeChild(Videos[0]);
         ConteneurVideo2.removeChild(Videos[1]);
         ConteneurVideo2.removeChild(RandomBookSection);
-        Chapitre4.removeChild(Images[9]);
+        Chapitre4.removeChild(ImageChapter4);
         Chapitre5.removeChild(Images[10]);
 
         Pages.appendChild(DivImage);
@@ -222,7 +220,7 @@ function cdiv(x) {              /* https://www.w3schools.com/howto/howto_js_medi
         DivImageContainer3.appendChild(Videos[0]);
         DivImageContainer4.appendChild(Videos[1]);
         DivImageContainer5.appendChild(RandomBookSection);
-        DivImageContainer6.appendChild(Images[9]);
+        DivImageContainer6.appendChild(ImageChapter4);
         DivImageContainer7.appendChild(Images[10]);
         DivImageContainer8.appendChild(ImagesGear)
 
@@ -271,7 +269,7 @@ function ediv(x1) {
         ConteneurVideo1.appendChild(Videos[0]);
         ConteneurVideo2.prepend(Videos[1]);
         ConteneurVideo2.appendChild(RandomBookSection);
-        Chapitre4.appendChild(Images[9]);
+        Chapitre4.appendChild(ImageChapter4);
         Chapitre5.appendChild(Images[10]);
         Pages.removeChild(DivImage); 
         BurgerMenuButton.classList.remove("pc_version")
@@ -417,15 +415,13 @@ tl.to(".chapitre_5", {opacity:0}, "<");
 tl.to(".fin", {yPercent:-600}, "<");
 
 function labelToScroll(timeline, label) {
-  console.log("scroll?", timeline, label);
   let st = timeline.scrollTrigger;
   
   let val = (
     st.start +
     (st.end - st.start) * (timeline.labels[label] / timeline.duration())
   )
-  console.log(val, "wat")
-  console.log(timeline.duration())
+
   return val ;
 }
 
@@ -437,80 +433,57 @@ let chapter4 = document.querySelector("#chapter4")
 let chapter5 = document.querySelector("#chapter5")
 
 link.addEventListener("click", (e) => {
-  console.log("boop");
+
   e.preventDefault();
 
   gsap.to(window, {
     scrollTo: labelToScroll(tl, "prologue"),
     duration: 2,
-    onStart: () => {
-      console.log("scrolling");
-    }
   });
 });
 
 chapter1.addEventListener("click", (e) => {
-  console.log("boop");
   e.preventDefault();
 
   gsap.to(window, {
     scrollTo: labelToScroll(tl, "chapitre 1"),
     duration: 2,
-    onStart: () => {
-      console.log("scrolling");
-    }
   });
 });
 
 chapter2.addEventListener("click", (e) => {
-  console.log("boop");
   e.preventDefault();
 
   gsap.to(window, {
     scrollTo: labelToScroll(tl, "chapitre 2"),
     duration: 2,
-    onStart: () => {
-      console.log("scrolling");
-    }
   });
 });
 
 chapter3.addEventListener("click", (e) => {
-  console.log("boop");
   e.preventDefault();
 
   gsap.to(window, {
     scrollTo: labelToScroll(tl, "chapitre 3"),
     duration: 2,
-    onStart: () => {
-      console.log("scrolling");
-    }
   });
 });
 
 chapter4.addEventListener("click", (e) => {
-  console.log("boop");
   e.preventDefault();
 
   gsap.to(window, {
     scrollTo: labelToScroll(tl, "chapitre 4"),
     duration: 2,
-    onStart: () => {
-      console.log("scrolling");
-    }
   });
 });
 
 chapter5.addEventListener("click", (e) => {
-  console.log("boop");
   e.preventDefault();
 
   gsap.to(window, {
     scrollTo: labelToScroll(tl, "chapitre 5"),
     duration: 2,
-    onStart: () => {
-      console.log("scrolling");
-    }
   });
 });
 
