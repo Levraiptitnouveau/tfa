@@ -529,6 +529,10 @@ chapter5.addEventListener("click", (e) => {
             }
             
           }
+
+       /* if ( window.scrollY >= labelToScroll(tl, "chapitre 3")) {
+          Videos[0].setAttribute("autoplay", '');
+        } */
     }
   
 }

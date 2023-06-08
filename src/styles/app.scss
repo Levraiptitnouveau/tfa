@@ -2121,7 +2121,7 @@ footer {
         font-size: 41px;
     }
     .images div .chapitre_3__video {
-        height: 419px;
+        margin: 0;
     }
 }
 @media (min-width: 1800px) {
@@ -2159,9 +2159,4 @@ footer {
         }
     }
     
-}
-@media (max-height: 900px) {
-    section {
-        overflow: scroll;
-    }
 }
