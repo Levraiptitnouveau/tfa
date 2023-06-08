@@ -296,7 +296,6 @@ const tl = gsap.timeline({
     trigger: "main",
     scrub: 1,
     pin: true,
-    markers: true,
     end: "+=10000"
   }
 });
