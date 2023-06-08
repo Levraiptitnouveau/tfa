@@ -68,6 +68,8 @@
         opacity: 1;
     }
   }
+
+
   /*
   @keyframes exciter {
     0% {
@@ -1420,6 +1422,9 @@ footer {
 }
 
 @media (min-width: 1000px) {
+    .uppage {
+        display: none;
+    }
     header.guide {
         height: 100vh;
     }
@@ -1518,6 +1523,17 @@ footer {
     }
     .burgermenu_button {
         top:-100vh;
+        cursor: pointer;
+        svg {
+            fill: white;
+            height: 40px;
+        }
+    }
+    .show {
+        top:-20px;;
+    }
+    .show:hover {
+        top:-5px;
     }
     
     header {
@@ -1692,6 +1708,7 @@ footer {
                 }
             }
         }
+
         
     }
     section {

@@ -59,6 +59,8 @@ let RandomBook = document.querySelector(".random_book__cover");
 let RandomBookButton = document.querySelector(".discover");
 let TitreLivre = document.querySelector(".book_title")
 console.log(main.offsetTop);
+
+
 let Livres = [ 
   '<img src="assets/images/livres/radiant.png" alt="Couverture Radiant">',
   '<img src="assets/images/livres/arena.png" alt="Couverture Arena">',
@@ -120,10 +122,16 @@ RandomBookButton.addEventListener("click", () => {
 })
 
 /* Borgir menu */
-
+let Sommaire = document.querySelector(".nav")
 BurgerMenuButton.addEventListener("click", () => {
 
-  if (BurgerMenuButton.innerHTML == "X") {
+  if (BurgerMenuButton.classList.contains("pc_version") == true) {
+    gsap.to(window, {
+      scrollTo: Sommaire.offsetTop,
+      duration: 1,
+    })
+  } else {
+    if (BurgerMenuButton.innerHTML == "X") {
       BurgerMenu.classList.remove("actif");
       Body.classList.remove("actif");
       BurgerMenuButton.classList.remove("clicked")
@@ -134,6 +142,9 @@ BurgerMenuButton.addEventListener("click", () => {
   BurgerMenuButton.innerHTML = "X";
   BurgerMenuButton.classList.add("clicked")
   }
+  }
+
+  
   
 })
 
@@ -225,14 +236,17 @@ function cdiv(x) {              /* https://www.w3schools.com/howto/howto_js_medi
         DivImage.appendChild(RandomBookSection);
         DivImage.appendChild(DivImageContainer6);
         DivImage.appendChild(DivImageContainer7);
-        BurgerMenuButton.classList.add("unseen");
         if (navBurger.classList.contains("actif")) {
           navBurger.classList.remove("actif");
           Body.classList.remove("actif");
           BurgerMenuButton.classList.remove("clicked");
           BurgerMenuButton.innerHTML = "ME</br>NU";
         }
-
+        BurgerMenuButton.classList.add("pc_version")
+        BurgerMenuButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136 304"><path d="M66 0c7.37 4.48 9.89 12.51 14.02 19.33 11.21 18.51 22.65 36.89 33.33 55.69 7.54 13.27 13.99 27.15 20.95 40.74.42.82 1.13 1.5 1.7 2.24v2c-7.18-6.7-15.07-12.8-21.39-20.23-11.12-13.08-21.68-26.68-31.72-40.61-7.52-10.43-13.85-21.72-20.7-32.63-.31-.5-.58-1.02-.8-1.4C39.81 57.54 29.08 96.44 0 124v-11c.96-3.15 1.46-6.55 2.96-9.42 11.55-22.12 23.1-44.25 35.06-66.15C44.95 24.73 52.65 12.46 60 0h6Z"/><path d="M67 304c-1.41-6.51-3.03-12.99-4.16-19.55-1.19-6.93-2.37-13.91-2.73-20.92-.94-18.52-1.72-37.05-2.03-55.58-.56-33.08-.92-66.18-.95-99.26-.01-11.36 1.28-22.71 1.86-34.07.19-3.61 1.91-5.34 5.44-5.61 3.42-.26 5.27 1.15 5.77 4.59.85 5.8 2.55 11.57 2.66 17.38.58 31.08.94 62.18 1.05 93.27.05 14.43-.49 28.86-.96 43.29-.54 16.2-1.1 32.41-2.05 48.59-.55 9.32-1.91 18.59-2.9 27.89h-1Z"/></svg>';
+        
+        
+       
 
 
 
@@ -260,12 +274,13 @@ function ediv(x1) {
         Chapitre4.appendChild(Images[9]);
         Chapitre5.appendChild(Images[10]);
         Pages.removeChild(DivImage); 
+        BurgerMenuButton.classList.remove("pc_version")
+        BurgerMenuButton.innerHTML = "ME</br>NU"
+
 
         
 
-        /*if(BurgerMenuButton.classList.contains("unseen")) {
-          BurgerMenuButton.classList.remove("unseen");
-        } */
+
     }
 }
 let x1 = window.matchMedia("(max-width: 999px)");
@@ -518,16 +533,11 @@ chapter5.addEventListener("click", (e) => {
             cover.classList.remove("hidden");
             pages.classList.add("hidden");
           }
-          if (window.scrollY >= recuperateur) {
-            BurgerMenuButton.classList.remove("unseen")
-      
-          } else {
-            if (BurgerMenuButton.classList.contains("unseen")) {
 
-            } else {
-              BurgerMenuButton.classList.add("unseen");
-            }
-            
+          if (window.scrollY >= recuperateur && BurgerMenuButton.classList.contains("pc_version")) {
+            BurgerMenuButton.classList.add("show")
+          } else {
+            BurgerMenuButton.classList.remove("show")
           }
 
        /* if ( window.scrollY >= labelToScroll(tl, "chapitre 3")) {
