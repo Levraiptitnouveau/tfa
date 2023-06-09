@@ -478,6 +478,18 @@ section {
 .dorinne {
     font-size: 29px;
 }
+::-webkit-scrollbar {
+    width: 10px;
+  }
+::-webkit-scrollbar-track {
+    background: #E5DABC;
+    margin-block: .5em;
+  }
+::-webkit-scrollbar-thumb {
+    background-color: #680000;
+    border: 1px black solid;
+    width: 10px;
+}
 .asterix {
     font-size: 24px;
     color: #C31A2F;
